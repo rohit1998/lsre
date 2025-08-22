@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+.ruff_cache/
+*.egg-info
+.coverage
+
+# Virtual environments
+.venv
+
+# macos
+.DS_Store
+
+# Project files
+outputs
+logs
+scratchpad
+data
+.ruff_cache
+.pytest_cache
+htmlcov
+.coverage

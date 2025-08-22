@@ -1,0 +1,27 @@
+{
+    "recommendations": [
+        // ide
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+        "aaron-bond.better-comments",
+        "njpwerner.autodocstring",
+        "eamodio.gitlens",
+        "formulahendry.code-runner",
+        "christian-kohler.path-intellisense",
+        // language
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "tamasfe.even-better-toml",
+        "marimo-team.vscode-marimo",
+        // code quality
+        "charliermarsh.ruff",
+        "streetsidesoftware.code-spell-checker",
+        "davidanson.vscode-markdownlint",
+        // github actions
+        "github.vscode-github-actions",
+        // file helpers
+        "george-alisson.html-preview-vscode",
+        "tomoki1207.pdf",
+    ]
+}

@@ -1,0 +1,1 @@
+When installing any new package prefer using uv over pip and conda

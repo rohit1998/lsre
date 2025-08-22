@@ -1,0 +1,66 @@
+site_name: Sample Python Project
+site_description: A simple codebase following good Python practices
+site_author: Rohit Gupta
+
+repo_url: https://github.com/rohit1998/sample_python_project
+repo_name: sample_python_project
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            heading_level: 2
+  - gen-files:
+      scripts:
+      - tools/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+
+nav:
+  - Home:
+    - Introduction: index.md
+  - Getting Started:
+    - VM Setup: getting-started/vm-setup.md
+    - Project Setup: getting-started/project-setup.md
+    - Template Update: getting-started/template-update.md
+  - Code Reference: reference/

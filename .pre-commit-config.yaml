@@ -1,0 +1,44 @@
+repos:
+  # uv.lock file is up to date wrt pyproject.toml
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.8.0
+    hooks:
+      - id: uv-lock
+        always_run: true
+
+  # run ruff linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.4
+    hooks:
+      - id: ruff-check
+        args: [ --fix ]
+        always_run: true
+      - id: ruff-format
+        always_run: true
+
+  # check typing using pyright
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.403
+    hooks:
+      - id: pyright
+        always_run: true
+
+  # local hook to run tests
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: uv run pytest
+        language: python
+        pass_filenames: false
+        always_run: true
+
+  # local hook to run tests
+  - repo: local
+    hooks:
+      - id: mkdocs-build
+        name: mkdocs-build
+        entry: uv run mkdocs build
+        language: python
+        pass_filenames: false
+        always_run: true
