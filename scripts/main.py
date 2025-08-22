@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from loguru import logger
 from omegaconf import DictConfig, OmegaConf
 
-from sample_python_project.module import MyModule
+from lsre.module import MyModule
 
 this_dir = Path(__file__).resolve().parent
 

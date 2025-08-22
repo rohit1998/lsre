@@ -1,6 +1,6 @@
 # === VARIABLES ===
 
-project_name := "sample-python-project"
+project_name := "learn-simple-regular-expressions"
 docker_image_prod := project_name + "-prod"
 docker_image_dev := project_name + "-dev"
 github_owner := "rohit1998"

@@ -4,7 +4,7 @@ import os
 
 import pytest
 
-from sample_python_project.module import MyModule
+from lsre.module import MyModule
 
 
 @pytest.fixture
