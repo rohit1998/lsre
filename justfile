@@ -4,7 +4,7 @@ project_name := "learn-simple-regular-expressions"
 docker_image_prod := project_name + "-prod"
 docker_image_dev := project_name + "-dev"
 github_owner := "rohit1998"
-github_repo := "sample_python_project"
+github_repo := "lsre"
 
 # === ALIASES ===
 
