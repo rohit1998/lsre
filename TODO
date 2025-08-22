@@ -1,12 +1,1 @@
 # TODO
-
-- coverage reports, local and remote
-- logger aggregator
-- docker access from inside dev env
-- Fonts
-- Use common zsh history
-- explore fzf and fzf tab
-- Have more docs, directory structure, links to tools docs etc
-- safety for code security
-- use ty by uv for type checking
-- use local compute for github actions

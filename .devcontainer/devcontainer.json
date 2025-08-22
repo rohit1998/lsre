@@ -1,5 +1,5 @@
 {
-    "name": "Sample Python Project",
+    "name": "Learn Simple Regular Expressions",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "dev_service",
     "workspaceFolder": "/home/appuser/app",
@@ -43,7 +43,7 @@
     "forwardPorts": [],
     "postCreateCommand": "bash ./.devcontainer/post-create.sh",
     "mounts": [
-        "source=zsh-history-sample-python-project,target=/home/appuser/commandhistory,type=volume",
+        "source=zsh-history-learn-simple-regular-expressions-project,target=/home/appuser/commandhistory,type=volume",
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/appuser/.ssh,type=bind,consistency=cached",
         "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
     ],

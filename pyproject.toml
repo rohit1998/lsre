@@ -1,7 +1,7 @@
 [project]
-name = "sample-python-project"
+name = "lsre"
 version = "0.1.0"
-description = "A simple codebase following good Python practices"
+description = "A project to learn simple regular expressions."
 readme = "README.md"
 authors = [
     { name = "Rohit Gupta", email = "gupta.rohit21198@gmail.com" }

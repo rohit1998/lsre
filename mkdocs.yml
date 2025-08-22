@@ -1,9 +1,9 @@
-site_name: Sample Python Project
-site_description: A simple codebase following good Python practices
+site_name: Learn Simple Regular Expressions
+site_description: A project to learn simple regular expressions
 site_author: Rohit Gupta
 
-repo_url: https://github.com/rohit1998/sample_python_project
-repo_name: sample_python_project
+repo_url: https://github.com/rohit1998/lsre
+repo_name: lsre
 
 theme:
   name: material
