@@ -127,9 +127,9 @@ def is_url(text: str) -> bool:
     """
     logger.debug(f'Checking if {text} is a url')
     pattern = (
-        r'^(http|https|ftp)://'  # scheme
+        r'(http|https|ftp)://'  # scheme
         r'(\w+:\w+@)?[a-z0-9]+(\.[a-z0-9])*'  # authority and host
-        r'(\:\d+)?(/\w+)?$'  # port and path
+        r'(\:\d+)?(/\w+)?'  # port and path
     )
     match = re.match(pattern=pattern, string=text)
     logger.debug(f'Match result: {match}')
