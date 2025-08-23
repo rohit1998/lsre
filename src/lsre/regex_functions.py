@@ -33,7 +33,7 @@ def is_alphanumeric(text: str) -> bool:
         False
     """
     logger.debug(f'Checking if {text} is alphanumeric')
-    pattern = r'[a-zA-Z0-9]+'
+    pattern = r'^[a-zA-Z0-9]+$'
     match = re.match(pattern=pattern, string=text)
     logger.debug(f'Match result: {match}')
     return match is not None
@@ -127,9 +127,9 @@ def is_url(text: str) -> bool:
     """
     logger.debug(f'Checking if {text} is a url')
     pattern = (
-        r'(http|https|ftp)://'  # scheme
+        r'^(http|https|ftp)://'  # scheme
         r'(\w+:\w+@)?[a-z0-9]+(\.[a-z0-9])*'  # authority and host
-        r'(\:\d+)?(/\w+)?'  # port and path
+        r'(\:\d+)?(/\w+)?$'  # port and path
     )
     match = re.match(pattern=pattern, string=text)
     logger.debug(f'Match result: {match}')
@@ -255,12 +255,6 @@ def is_phone_number(text: str) -> bool:
         - Doesn't check for separators consistency, only their presence
     """
     logger.debug(f'Checking if {text} is a phone number')
-    # Definition (challenge-level):
-    # - optional leading + followed by 1-3 digit country code
-    # - allow separators: spaces, hyphens, dots
-    # - allow optional parentheses around area code
-    # - require total of 7-15 digits (counting only digits)
-    # Examples: +1-800-555-1212, (800) 555-1212, 8005551212
     pattern = r'^\+?(?=(?:.*\d){7,})(?!(?:.*\d){16,})[\d\-\(\)\s]+$'
     match = re.match(pattern=pattern, string=text)
     logger.debug(f'Match result: {match}')
@@ -513,7 +507,8 @@ def is_strong_password(text: str) -> bool:
     """
     logger.debug(f'Checking if {text} is a strong password')
     pattern = (
-        r'(?=(?:.*[a-z]))(?=(?:.*[A-Z]))(?=(?:.*[0-9]))(?=(?:.*[!@#$%&])).{8,}'
+        r'^(?=(?:.*[a-z]))(?=(?:.*[A-Z]))(?=(?:.*[0-9]))(?=(?:.*[!@#$%&]))'
+        r'.{8,}$'
     )
     match = re.match(pattern=pattern, string=text)
     logger.debug(f'Match result: {match}')
