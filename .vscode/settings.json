@@ -31,4 +31,7 @@
     "terminal.integrated.env.linux": {
         "DOTENV_FILE": "${workspaceFolder}/.env"
     },
+    "cSpell.words": [
+        "Luhn"
+    ],
 }

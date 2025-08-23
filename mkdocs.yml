@@ -44,11 +44,16 @@ plugins:
       - tools/gen_ref_pages.py
   - literate-nav:
       nav_file: SUMMARY.md
+  - mermaid2
 
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.inlinehilite
   - admonition
   - pymdownx.details
@@ -59,8 +64,4 @@ markdown_extensions:
 nav:
   - Home:
     - Introduction: index.md
-  - Getting Started:
-    - VM Setup: getting-started/vm-setup.md
-    - Project Setup: getting-started/project-setup.md
-    - Template Update: getting-started/template-update.md
   - Code Reference: reference/
