@@ -1,6 +1,7 @@
 # Learn Simple Regular Expressions
 
-[![pr-checks](https://github.com/rohit1998/lsre/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/rohit1998/lsre/actions/workflows/pr-checks.yml)
+[![pr-checks](https://github.com/rohit1998/sample_python_project/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/rohit1998/sample_python_project/actions/workflows/pr-checks.yml)
+[![PyPI version](https://img.shields.io/pypi/v/a-sample-python-project.svg)](https://pypi.org/project/a-sample-python-project/)
 
 A project to learn simple regular expressions.
 
