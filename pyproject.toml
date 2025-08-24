@@ -6,6 +6,11 @@ readme = "README.md"
 authors = [
     { name = "Rohit Gupta", email = "gupta.rohit21198@gmail.com" }
 ]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
 requires-python = ">=3.12.8"
 dependencies = [
     "hydra-core>=1.3.2",
