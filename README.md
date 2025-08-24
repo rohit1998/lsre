@@ -1,8 +1,8 @@
 # Learn Simple Regular Expressions
 
-[![pr-checks](https://github.com/rohit1998/sample_python_project/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/rohit1998/sample_python_project/actions/workflows/pr-checks.yml)
-[![TestPyPI version](https://img.shields.io/badge/dynamic/json?url=https://test.pypi.org/pypi/a-sample-python-project/json&label=TestPyPI&query=$.info.version)](https://test.pypi.org/project/a-sample-python-project/)
-
+[![pr-checks](https://github.com/rohit1998/lsre/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/rohit1998/lsre/actions/workflows/pr-checks.yml)
+[![PyPI version](https://img.shields.io/pypi/v/lsre.svg)](https://pypi.org/project/lsre/)
+[![Python versions](https://img.shields.io/pypi/pyversions/lsre.svg)](https://pypi.org/project/lsre/)
 A project to learn simple regular expressions.
 
 ## Overview

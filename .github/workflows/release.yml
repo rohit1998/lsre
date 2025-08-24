@@ -24,11 +24,8 @@ jobs:
       - name: Build package
         run: uv build
 
-      - name: Publish to test PyPI
-        run: uv publish --publish-url https://test.pypi.org/legacy/
-
-      # - name: Publish to PyPI
-      #   run: uv publish
+      - name: Publish to PyPI
+        run: uv publish
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
