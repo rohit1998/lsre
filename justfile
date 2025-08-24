@@ -230,4 +230,19 @@ create-branch-and-pr branch-name commit-message=branch-name: (push-new-branch-of
 # github: set pr to merge with main
 [group('github')]
 merge-pr:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # merge the PR (rebase strategy)
     gh pr merge --rebase
+
+    # delete current branch locally, but never delete protected names
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    case "$branch" in
+        main|master|develop|HEAD)
+            echo "Refusing to delete protected branch: $branch"
+            exit 0
+            ;;
+        *)
+            git branch -D "$branch" && echo "Deleted local branch $branch"
+            ;;
+    esac
