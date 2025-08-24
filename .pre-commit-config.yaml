@@ -42,3 +42,13 @@ repos:
         language: python
         pass_filenames: false
         always_run: true
+
+  # local hook to run build
+  - repo: local
+    hooks:
+      - id: uv-build
+        name: uv-build
+        entry: uv build
+        language: python
+        pass_filenames: false
+        always_run: true

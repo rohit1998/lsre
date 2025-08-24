@@ -11,6 +11,17 @@ nav = Nav()
 root = Path(__file__).parent.parent
 src = root / 'src'
 
+raw_reference_path = Path('docs/reference')
+if raw_reference_path.exists():
+    for item in raw_reference_path.glob('*'):
+        if item.is_dir():
+            for subitem in item.rglob('*'):
+                subitem.unlink() if subitem.is_file() else subitem.rmdir()
+            item.rmdir()
+        else:
+            item.unlink()
+    raw_reference_path.rmdir()
+
 for path in sorted(src.rglob('*.py')):
     module_path = path.relative_to(src).with_suffix('')
     doc_path = path.relative_to(src).with_suffix('.md')
