@@ -9,6 +9,7 @@
     git checkout main
     git pull
     uv version --bump patch # patch, minor, major. note new version
+    git add pyproject.toml uv.lock
     j pr release-<NEW_VERSION>
     # wait for pr-checks to pass
     j mpr
