@@ -18,7 +18,6 @@
 
     ```bash
     git checkout main
-    git pull
     git tag v<NEW_VERSION>
     git push origin v<NEW_VERSION>
     ```

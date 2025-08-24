@@ -7,7 +7,7 @@
 1. `j pr branch-name commit-message=branch-name` to create branch and pull request run
 1. Wait for github actions to pass.
 1. Optional, `j pu commit-message` on issue, make changes
-1. `j mpr`, finally merge on actions and features success.
+1. `j mpr`, finally merge on actions and features success, and cleanup branches.
 
 ## For proper features
 
@@ -19,4 +19,4 @@
 1. `j cpr` to create pr.
 1. Wait for github actions to pass.
 1. Optional, `j pu commit-message` on issue, make changes
-1. `j mpr`, finally merge on actions and features success.
+1. `j mpr`, finally merge on actions and features success, and cleanup branches.
