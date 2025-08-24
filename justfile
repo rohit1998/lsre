@@ -35,7 +35,7 @@ run:
 
 # verification: run all devcontainer verification commands
 [group('verification')]
-all-devcontainer-verification: pre-commit check run
+all-devcontainer-verification: pre-commit check build run
 
 # verification: run all host verification commands
 [group('verification')]
