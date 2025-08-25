@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*"   # run only when a tag like v0.2.0 is pushed
+  workflow_dispatch:
 
 jobs:
   release:
@@ -18,8 +19,8 @@ jobs:
         with:
           fetch-depth: 0   # ensure tags are fetched
 
-      - name: Install uv
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Setup UV
+        uses: astral-sh/setup-uv@v6
 
       - name: Build package
         run: uv build
