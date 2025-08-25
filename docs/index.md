@@ -1,6 +1,12 @@
 # Learn Simple Regular Expressions
 
-A project to learn simple regular expressions.
+[![pr-checks](https://github.com/rohit1998/lsre/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/rohit1998/lsre/actions/workflows/pr-checks.yml)
+[![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://rohit1998.github.io/lsre/)
+[![PyPI version](https://img.shields.io/pypi/v/lsre.svg?color=blue)](https://pypi.org/project/lsre/)
+[![Python versions](https://img.shields.io/pypi/pyversions/lsre.svg?color=blue)](https://pypi.org/project/lsre/)
+
+A project to learn simple regular expressions. Also publish package to
+pypi to learn automated publishing.
 
 This project contains list of regex based functions.
 
@@ -11,9 +17,22 @@ This project contains list of regex based functions.
 
 ### Installation
 
+#### Using UV (Recommended)
+
 ```bash
-git clone git@github.com:rohit1998/lsre.git
-uv sync
+uv add lsre
+```
+
+OR
+
+```bash
+uv pip install lsre
+```
+
+#### Using pip
+
+```bash
+pip install lsre
 ```
 
 ### Usage

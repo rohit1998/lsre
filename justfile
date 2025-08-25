@@ -229,11 +229,11 @@ create-branch-and-pr branch-name commit-message=branch-name: (push-new-branch-of
 
 # github: set pr to merge with main
 [group('github')]
-merge-pr:
+merge-pr *flags:
     #!/usr/bin/env bash
     set -euo pipefail
 
-    gh pr merge --rebase
+    gh pr merge --rebase {{flags}}
     branch=$(git rev-parse --abbrev-ref HEAD)
     just checkout-and-pull-main
 
