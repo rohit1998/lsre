@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   deploy-docs:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: "github-pages"
       url: ${{ steps.deployment.outputs.page_url }}
@@ -29,8 +29,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Setup UV
         uses: astral-sh/setup-uv@v6

@@ -1,34 +1,43 @@
 name: pr-checks
 
 on:
-    pull_request:
-        branches:
-            - main
-    workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
-            - name: Setup UV
-              uses: astral-sh/setup-uv@v6
-            - name: Lock File Sync Check
-              run: uv lock --locked
-            - name: Install Dependencies
-              run: uv sync --locked
-            - name: Linting Check
-              run: uvx ruff check
-            - name: Format Check
-              run: uvx ruff format --check
-            - name: Type Consistency Check
-              run: uv run pyright
-            - name: Run Tests
-              run: uv run pytest -v --cov-report=xml
-            # - name: Upload Coverage to Codecov
-            #   uses: codecov/codecov-action@v4
-            #   with:
-            #     token: ${{ secrets.CODECOV_TOKEN }}
-            - name: Build Project
-              run: uv build
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup UV
+        uses: astral-sh/setup-uv@v6
+
+      - name: Lock File Sync Check
+        run: uv lock --locked
+
+      - name: Install Dependencies
+        run: uv sync --locked
+
+      - name: Linting Check
+        run: uvx ruff check
+
+      - name: Format Check
+        run: uvx ruff format --check
+
+      - name: Type Consistency Check
+        run: uv run pyright
+
+      - name: Run Tests
+        run: uv run pytest -v --cov-report=xml
+
+      # - name: Upload Coverage to Codecov
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Build Project
+        run: uv build
