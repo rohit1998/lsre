@@ -28,6 +28,9 @@ dev = [
     "pytest>=8.3.5",
     "ruff>=0.11.0",
     "pyright>=1.1.397",
+    "pre-commit>=4.2.0",
+]
+docs = [
     "mkdocs>=1.5.3",
     "mkdocs-material>=9.5.6",
     "mkdocstrings>=0.24.0",
@@ -35,9 +38,12 @@ dev = [
     "mkdocs-gen-files>=0.5.0",
     "mkdocs-literate-nav>=0.6.0",
     "mkdocs-section-index>=0.3.9",
-    "pre-commit>=4.2.0",
-    "marimo>=0.14.16",
     "mkdocs-mermaid2-plugin>=1.2.1",
+]
+notebooks = [
+    "marimo>=0.15.0",
+    "pandas>=2.3.2",
+    "pyarrow>=21.0.0",
 ]
 
 [tool.ruff]
@@ -87,4 +93,4 @@ omit = []
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
-ignore = ["scratchpad", "notebooks"]
+ignore = ["scratchpad", "notebooks", "tools"]

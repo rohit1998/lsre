@@ -32,10 +32,10 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Install Dependencies
-        run: uv sync --locked
+        run: uv run --no-sync mkdocs build --strict
 
       - name: Build Documentation
-        run: uv run mkdocs build --strict
+        run: uv run --no-sync mkdocs build --strict
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

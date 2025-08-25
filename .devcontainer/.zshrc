@@ -113,11 +113,18 @@ source $ZSH/oh-my-zsh.sh
 # Custom aliases
 alias j="just"
 jf() {just | grep "$1";}
+alias python=/home/appuser/app/.venv/bin/python
+alias python3=/home/appuser/app/.venv/bin/python3
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # . "$HOME/.local/bin/env"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Check if DOTENV_FILE is set and the file exists
 if [[ -n "$DOTENV_FILE" && -f "$DOTENV_FILE" ]]; then

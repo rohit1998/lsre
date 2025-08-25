@@ -93,6 +93,14 @@ RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:
 # install justfile
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /home/appuser/.local/bin
 
+# Install nvm and Node.js
+ENV NVM_DIR=/home/appuser/.nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install --lts \
+    && nvm use --lts \
+    && nvm alias default lts/*
+
 # Copy custom shell configuration files
 COPY --chown=appuser:appuser ./.devcontainer/.zshrc /home/appuser/.zshrc
 COPY --chown=appuser:appuser ./.devcontainer/.p10k.zsh /home/appuser/.p10k.zsh
@@ -107,6 +115,6 @@ ENV PATH="/home/appuser/.local/bin/:$PATH"
 # install all dependencies except code (project install in post-create.sh after copying code)
 COPY pyproject.toml pyproject.toml
 COPY uv.lock uv.lock
-RUN uv sync --no-install-project
+RUN uv sync --no-install-project --all-groups
 
 ###########################################
