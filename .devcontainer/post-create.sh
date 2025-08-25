@@ -12,4 +12,4 @@ git config --global commit.gpgsign true
 sudo chown -R appuser:appuser /home/appuser/commandhistory
 
 # install project dependencies
-uv sync
+uv sync --all-groups
