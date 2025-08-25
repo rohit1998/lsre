@@ -1,5 +1,9 @@
 """Root `lsre` class."""
 
+import sys
+
+from loguru import logger
+
 from .regex_functions import (
     is_alphanumeric,
     is_credit_card,
@@ -15,6 +19,9 @@ from .regex_functions import (
     is_url,
     is_uuid,
 )
+
+logger.remove()  # Remove default handler
+logger.add(sys.stderr, level='INFO')
 
 __all__ = [
     'is_alphanumeric',
