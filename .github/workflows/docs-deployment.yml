@@ -32,7 +32,7 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Install Dependencies
-        run: uv run --no-sync mkdocs build --strict
+        run: uv sync --no-dev --locked --group docs
 
       - name: Build Documentation
         run: uv run --no-sync mkdocs build --strict
