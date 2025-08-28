@@ -1,0 +1,37 @@
+services:
+  dev_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+      args:
+        APP_UID: ${APP_UID}
+        APP_GID: ${APP_GID}
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/home/appuser/app
+      - /home/appuser/app/.venv/
+    working_dir: /home/appuser/app
+    restart: unless-stopped
+    command: ["sleep", "infinity"]
+    networks:
+      - app_network
+
+  live_server_service:
+    image: node:slim
+    ports:
+      - "${LIVE_SERVER_PORT}:${LIVE_SERVER_PORT}"
+    volumes:
+      - .:/app
+    working_dir: /app/
+    command: >
+      sh -c "npm install -g live-server && live-server --port=${LIVE_SERVER_PORT} --host=0.0.0.0 --no-browser"
+    networks:
+      - app_network
+    tty: true
+    restart: always
+
+networks:
+  app_network:
+    driver: bridge

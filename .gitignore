@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+.ruff_cache/
+.pytest_cache/
+*.egg-info
+.coverage
+coverage.xml
+
+# Virtual environments
+.venv
+
+# macos
+.DS_Store
+
+# Project files
+.env
+outputs/*
+logs/*
+scratchpad/*
+data/*
+docs/reference/*
+
+# mk docs
+site/

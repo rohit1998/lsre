@@ -1,0 +1,18 @@
+defaults:
+  - logger: logger
+  - _self_
+
+text_list:
+  - "abc123"
+  - "user@example.com"
+  - "http://example.com"
+  - "192.168.0.1"
+  - "::1"
+  - "+1-800-555-1212"
+  - "4111 1111 1111 1111"
+  - "2025-11-30"
+  - "23:59:59"
+  - "#1a2b3c"
+  - "123e4567-e89b-12d3-a456-426614174000"
+  - "my-slug-123"
+  - "Aa1!aaaa"

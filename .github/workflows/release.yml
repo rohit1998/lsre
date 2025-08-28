@@ -1,0 +1,35 @@
+name: Release to PyPI
+
+on:
+  push:
+    tags:
+      - "v*"   # run only when a tag like v0.2.0 is pushed
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # for trusted publishing
+      contents: write   # for creating GitHub Release page
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # ensure tags are fetched
+
+      - name: Setup UV
+        uses: astral-sh/setup-uv@v6
+
+      - name: Build package
+        run: uv build
+
+      - name: Publish to PyPI
+        run: uv publish
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
